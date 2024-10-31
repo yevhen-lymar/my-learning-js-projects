@@ -9,20 +9,35 @@
   <body>
     <section>
       <h1>My JS Projects</h1>
-      <a href="./pages/blurryLoading.html">Blurry Loading</a>
-      <a href="./pages/DadJokes.html">Dad Jokes</a>
-      <a href="./pages/expandingCards.html">Expanding Cards</a>
-      <a href="./pages/formInputWave.html">Form Input Wave</a>
-      <a href="./pages/hiddenSearch.html">Hidden Search</a>
-      <a href="./pages/progressSteps.html">Progress Steps</a>
-      <a href="./pages/rotatingNvigation.html">Rotatng Navigation</a>
-      <a href="./pages/scrollAnimation.html">Scroll Animation</a>
-      <a href="./pages/soundBoard.html">Sound Board</a>
-      <a href="./pages/splitLandingPage.html">Split Landing Page</a>
-      <a href="./pages/eventKeyCodes.html">Event KeyCodes</a>
-      <a href="./pages/FAQ.html">FAQ</a>
-      <a href="./pages/randomChoisePicker.html">Random Choice Picker</a>
-      <a href="./pages/animatedNavigation.html">Animated Navigation</a>
+      <div class="countProjects"></div>
+      <a href="./pages/blurryLoading.html" class="link">Blurry Loading</a>
+      <a href="./pages/DadJokes.html" class="link">Dad Jokes</a>
+      <a href="./pages/expandingCards.html" class="link">Expanding Cards</a>
+      <a href="./pages/formInputWave.html" class="link">Form Input Wave</a>
+      <a href="./pages/hiddenSearch.html" class="link">Hidden Search</a>
+      <a href="./pages/progressSteps.html" class="link">Progress Steps</a>
+      <a href="./pages/rotatingNvigation.html" class="link"
+        >Rotatng Navigation</a
+      >
+      <a href="./pages/scrollAnimation.html" class="link">Scroll Animation</a>
+      <a href="./pages/soundBoard.html" class="link">Sound Board</a>
+      <a href="./pages/splitLandingPage.html" class="link"
+        >Split Landing Page</a
+      >
+      <a href="./pages/eventKeyCodes.html" class="link">Event KeyCodes</a>
+      <a href="./pages/FAQ.html" class="link">FAQ</a>
+      <a href="./pages/randomChoisePicker.html" class="link"
+        >Random Choice Picker</a
+      >
+      <a href="./pages/animatedNavigation.html" class="link"
+        >Animated Navigation</a
+      >
     </section>
+    <script>
+      const links = document.querySelectorAll(".link");
+      const linkCount = links.length;
+      const countProjects = document.querySelector(".countProjects");
+      countProjects.textContent = ` Counts of Projects: ${linkCount}`;
+    </script>
   </body>
 </html>
