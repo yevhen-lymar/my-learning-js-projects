@@ -16,6 +16,11 @@ function hightlightCups(idx) {
   //   console.log(idx);
   if (
     smallCups[idx].classList.contains("full") &&
+    idx === smallCups.length - 1
+  ) {
+    idx--;
+  } else if (
+    smallCups[idx].classList.contains("full") &&
     !smallCups[idx].nextElementSibling.classList.contains("full")
   ) {
     idx--;
@@ -24,10 +29,10 @@ function hightlightCups(idx) {
   smallCups.forEach((cup, idx2) => {
     if (idx2 <= idx) {
       cup.classList.add("full");
-    //   console.log(idx, idx2);
+      // console.log(idx, idx2);
     } else {
       cup.classList.remove("full");
-    //   console.log(idx, idx2);
+      //   console.log(idx, idx2);
     }
   });
 
