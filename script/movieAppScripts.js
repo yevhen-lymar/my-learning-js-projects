@@ -3,7 +3,7 @@ const API_URL =
   "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=" +
   API_KEY +
   "&page=1";
-console.log(API_URL);
+// console.log(API_URL);
 const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCH_API = "https://api.themoviedb.org/3/search/movie?&query=";
 
@@ -18,7 +18,7 @@ async function getMovies(url) {
   const response = await fetch(url);
   const data = await response.json();
 
-  //   console.log(data.results);
+    console.log(data.results);
   showMovies(data.results);
 }
 
@@ -27,7 +27,7 @@ function showMovies(movies) {
 
   movies.forEach((movie) => {
     const { title, poster_path, vote_average, overview } = movie;
-    console.log({ title, poster_path, vote_average, overview });
+    // console.log({ title, poster_path, vote_average, overview });
 
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
@@ -69,8 +69,8 @@ form.addEventListener("submit", (e) => {
     getMovies(resultSearch);
 
     search.value = "";
-    console.log(searchTerm);
-    console.log(resultSearch);
+    // console.log(searchTerm);
+    // console.log(resultSearch);
   } else {
     window.location.reload();
   }
