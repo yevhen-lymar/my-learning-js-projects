@@ -62,27 +62,35 @@ function setTime() {
   //   console.log(seconds);
   //   console.log(scale(hoursForClock, 0, 11, 0, 360));
 
-  hourEl.style = `transform: translate(-50%, -100%) rotate(${scale(
+  hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(
     hoursForClock,
     0,
     11,
     0,
     360
-  )}deg);`;
-  minuteEl.style = `transform: translate(-50%, -100%) rotate(${scale(
+  )}deg)`;
+  minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(
     minutes,
     0,
     59,
     0,
     360
-  )}deg);`;
-  secondEl.style = `transform: translate(-50%, -100%) rotate(${scale(
-    seconds,
-    0,
-    59,
-    0,
-    360
-  )}deg);`;
+  )}deg)`;
+
+  // Спеціальна обробка для секундної стрілки
+  if (seconds === 0) {
+    secondEl.style.transition = "none"; // Забираємо анімацію
+    secondEl.style.transform = `translate(-50%, -100%) rotate(0deg)`;
+  } else {
+    secondEl.style.transition = "transform 0.05s linear"; // Відновлюємо анімацію
+    secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(
+      seconds,
+      0,
+      59,
+      0,
+      360
+    )}deg)`;
+  }
 
   timeEl.innerHTML = `${hoursForClock}:${
     minutes < 10 ? "0" + minutes : minutes

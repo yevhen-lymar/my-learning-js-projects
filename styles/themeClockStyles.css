@@ -85,7 +85,6 @@ body {
   /* transform: translate(-50%, -100%) rotate(0deg); */
   height: 100px;
   background-color: #e74c3c;
-  transition: transform 0.05s linear;
 }
 
 .center-point {
