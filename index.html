@@ -11,13 +11,13 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./styles/stylesGeneral.css" />
-    <link rel="stylesheet" href="./styles/font.css" />
+    <!-- <link rel="stylesheet" href="./styles/font.css" /> -->
     <title>General</title>
   </head>
   <body>
     <section>
       <h1>My JavaScripts Projects</h1>
-      <div class="countProjects"></div>
+      <div class="countProjects">Counts of Projects: <span></span></div>
       <a href="./pages/blurryLoading.html" class="link">Blurry Loading</a>
       <a href="./pages/DadJokes.html" class="link">Dad Jokes</a>
       <a href="./pages/expandingCards.html" class="link">Expanding Cards</a>
@@ -49,12 +49,13 @@
         >Button Ripple Effect</a
       >
       <a href="./pages/dragNdrop.html" class="link">Drag N Drop</a>
+      <a href="./pages/newsApp.html" class="link">News App</a>
     </section>
     <script>
       const links = document.querySelectorAll(".link");
       const linkCount = links.length;
-      const countProjects = document.querySelector(".countProjects");
-      countProjects.innerText = `Counts of Projects: ${linkCount}`;
+      const countProjects = document.querySelector(".countProjects span");
+      countProjects.innerText = linkCount;
     </script>
   </body>
 </html>
