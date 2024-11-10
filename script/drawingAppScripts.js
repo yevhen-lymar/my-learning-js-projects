@@ -47,6 +47,32 @@ canvas.addEventListener("mousemove", (e) => {
   }
 });
 
+canvas.addEventListener("touchstart", (e) => {
+  isPressed = true;
+  const touch = e.touches[0];
+  x = touch.clientX - canvas.offsetLeft;
+  y = touch.clientY - canvas.offsetTop;
+});
+
+canvas.addEventListener("touchend", () => {
+  isPressed = false;
+  x = undefined;
+  y = undefined;
+});
+
+canvas.addEventListener("touchmove", (e) => {
+  if (isPressed) {
+    e.preventDefault(); // Відключаємо стандартну прокрутку
+    const touch = e.touches[0];
+    const x2 = touch.clientX - canvas.offsetLeft;
+    const y2 = touch.clientY - canvas.offsetTop;
+    drawCircle(x2, y2);
+    drawLine(x, y, x2, y2);
+    x = x2;
+    y = y2;
+  }
+});
+
 function drawCircle(x, y) {
   ctx.beginPath();
   ctx.arc(x, y, size, 0, Math.PI * 2);
@@ -104,17 +130,22 @@ saveEl.addEventListener("click", () => {
 const toolbox = document.getElementById("toolbox");
 
 function resizeCanvas() {
-  const padding = 200;
-  canvas.width = window.innerWidth - 200;
-  canvas.height = window.innerHeight - 300;
-  toolbox.style.width = window.innerWidth - 200 + 4 + "px";
-  console.log(
-    window.innerWidth - 100,
-    window.innerHeight - 300,
-    toolbox.style.width
-  );
+  const originalSize = 600;
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+  if (windowWidth < 550) {
+    canvas.width = windowWidth - 80;
+    canvas.height = windowHeight - 300;
+    toolbox.style.width = windowWidth - 80 + 4 + "px";
+  } else {
+    canvas.width = originalSize;
+    canvas.height = originalSize;
+    toolbox.style.width = originalSize + 4 + "px";
+  }
+
+  // console.log(windowWidth, windowHeight, toolbox.style.width);
 
   // canvas.style.margin = `${padding}px`;
 }
-// window.addEventListener("resize", resizeCanvas);
+window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
