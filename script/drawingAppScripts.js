@@ -5,6 +5,7 @@ const sizeEl = document.getElementById("size");
 const colorEl = document.getElementById("color");
 const clearEl = document.getElementById("clear");
 const saveEl = document.getElementById("save");
+const toolbox = document.getElementById("toolbox");
 
 const ctx = canvas.getContext("2d");
 
@@ -127,25 +128,20 @@ saveEl.addEventListener("click", () => {
   link.click();
 });
 
-const toolbox = document.getElementById("toolbox");
-
 function resizeCanvas() {
   const originalSize = 600;
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
   if (windowWidth < 550) {
-    canvas.width = windowWidth - 80;
+    canvas.width = windowWidth - 40;
     canvas.height = windowHeight - 300;
-    toolbox.style.width = windowWidth - 80 + 4 + "px";
+    toolbox.style.width = windowWidth - 40 + 4 + "px";
   } else {
     canvas.width = originalSize;
     canvas.height = originalSize;
     toolbox.style.width = originalSize + 4 + "px";
   }
-
   // console.log(windowWidth, windowHeight, toolbox.style.width);
-
-  // canvas.style.margin = `${padding}px`;
 }
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();

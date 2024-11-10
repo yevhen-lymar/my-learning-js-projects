@@ -60,3 +60,11 @@ canvas {
 .button:active {
   transform: scale(0.98);
 }
+
+@media (max-width: 550px) {
+  .toolbox > * {
+    font-size: 1.5rem;
+    height: 40px;
+    width: 40px;
+  }
+}
