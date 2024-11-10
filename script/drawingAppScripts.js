@@ -4,6 +4,7 @@ const decreaseBtn = document.getElementById("decrease");
 const sizeEl = document.getElementById("size");
 const colorEl = document.getElementById("color");
 const clearEl = document.getElementById("clear");
+const saveEl = document.getElementById("save");
 
 const ctx = canvas.getContext("2d");
 
@@ -90,4 +91,12 @@ colorEl.addEventListener("change", (e) => {
 
 clearEl.addEventListener("click", () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+
+saveEl.addEventListener("click", () => {
+  const dataURL = canvas.toDataURL("image/png");
+  const link = document.createElement("a");
+  link.href = dataURL;
+  link.download = "canvas_image.png";
+  link.click();
 });

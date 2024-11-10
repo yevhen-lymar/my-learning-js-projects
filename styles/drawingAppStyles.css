@@ -40,10 +40,18 @@ canvas {
   padding: 0.25rem;
 }
 
+.toolbox > *:nth-child(5) {
+  width: 100px;
+}
+
 .toolbox > *:last-child {
   margin-left: auto;
 }
 
 .button {
   cursor: pointer;
+}
+
+.button:active {
+  transform: scale(0.98);
 }
