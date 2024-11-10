@@ -1,5 +1,10 @@
 @import url("font.css");
 
+:root {
+  --canvas-size-desktop: 700px;
+  --canvas-size-mobile: 400px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -22,7 +27,7 @@ canvas {
 .toolbox {
   background-color: steelblue;
   border: 1px solid steelblue;
-  width: 604px;
+  /* width: 604px; */
   display: flex;
   padding: 1rem;
 }

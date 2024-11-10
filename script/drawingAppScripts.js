@@ -100,3 +100,21 @@ saveEl.addEventListener("click", () => {
   link.download = "canvas_image.png";
   link.click();
 });
+
+const toolbox = document.getElementById("toolbox");
+
+function resizeCanvas() {
+  const padding = 200;
+  canvas.width = window.innerWidth - 200;
+  canvas.height = window.innerHeight - 300;
+  toolbox.style.width = window.innerWidth - 200 + 4 + "px";
+  console.log(
+    window.innerWidth - 100,
+    window.innerHeight - 300,
+    toolbox.style.width
+  );
+
+  // canvas.style.margin = `${padding}px`;
+}
+// window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
