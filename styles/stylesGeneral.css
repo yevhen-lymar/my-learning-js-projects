@@ -16,6 +16,11 @@ a:hover,
 button:hover {
   color: #700000;
 }
+.link:active,
+.btn:active,
+.link-home:active {
+  transform: scale(0.98);
+}
 
 body {
   background-color: #2c2222;
@@ -65,10 +70,6 @@ body {
   border-radius: 2px;
 }
 
-.btn:active {
-  transform: scale(0.97);
-}
-
 .pojects {
   display: flex;
   flex-direction: column;
@@ -108,10 +109,6 @@ body {
   color: #000;
 }
 
-.link:active {
-  transform: scale(0.97);
-}
-
 .countProjects {
   text-align: center;
   width: 300px;
@@ -145,7 +142,7 @@ body {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 576px) {
   .grid {
     grid-template-columns: 1fr 1fr;
     gap: 5px;
