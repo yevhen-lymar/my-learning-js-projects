@@ -144,3 +144,13 @@ body {
     width: 200px;
   }
 }
+
+@media (max-width: 400px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+  .grid .link {
+    width: 180px;
+  }
+}
