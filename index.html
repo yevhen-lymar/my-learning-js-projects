@@ -40,11 +40,26 @@
     <title>General | Yevhen Lymar - Projects</title>
   </head>
   <body>
-    <header></header>
-    <main>
-      <section>
-        <h1>My JavaScripts Projects</h1>
-        <div class="countProjects">Counts of Projects: <span></span></div>
+    <header class="header" id="header">
+      <div class="container">
+        <a href="https://yevhen-lymar.github.io/" class="link-home">Home</a>
+
+        <div class="toggle-container">
+          <button class="btn" id="grid">
+            <i class="fa-solid fa-grip"></i>
+          </button>
+          <button class="btn" id="flex">
+            <i class="fa-solid fa-grip-lines"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section id="projects" class="container pojects">
+      <h1>My JavaScripts Projects</h1>
+
+      <div class="countProjects">Count of Projects: <span></span></div>
+      <div class="container flex" id="toggle-g-f">
         <a href="./pages/blurryLoading.html" class="link">Blurry Loading</a>
         <a href="./pages/DadJokes.html" class="link">Dad Jokes</a>
         <a href="./pages/expandingCards.html" class="link">Expanding Cards</a>
@@ -106,18 +121,16 @@
           >Password Generator</a
         >
         <a href="./pages/goodCheapFast.html" class="link">Good, Cheap, Fast</a>
-      </section>
-    </main>
-    <footer>
-      <div>Made by yevhen_lymar</div>
-      <div>2024</div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div>Made by yevhen_lymar</div>
+        <div>2024</div>
+      </div>
     </footer>
     <!-- java-scripts -->
-    <script>
-      const links = document.querySelectorAll(".link");
-      const linkCount = links.length;
-      const countProjects = document.querySelector(".countProjects span");
-      countProjects.innerText = linkCount;
-    </script>
+    <script src="./script/scriptsGeneral.js"></script>
   </body>
 </html>
