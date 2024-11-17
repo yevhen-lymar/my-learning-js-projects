@@ -15,21 +15,32 @@ const randomFunc = {
 };
 
 copyBtn.addEventListener("click", () => {
-  const textarea = document.createElement("textarea");
+  const textArea = document.createElement("textarea");
   const password = resultEl.innerText;
 
   if (!password) {
     return;
   }
 
-  textarea.value = password;
-  document.body.appendChild(textarea);
-  textarea.select();
-  document.execCommand("copy");
-  textarea.remove();
-  alert("Password copied to clipboard!")
-
+  textArea.value = password;
+  console.log(password);
+  document.body.appendChild(textArea);
+  // textArea.select();
+  // document.execCommand("copy");
+  copyToClipboard(password);
+  textArea.remove();
+  // alert("Password copied to clipboard!");
 });
+
+async function copyToClipboard(pass) {
+  try {
+    await navigator.clipboard.writeText(pass);
+    alert("Password copied to clipboard!");
+  } catch (error) {
+    console.error("Copy error", error);
+    alert("Failed to copy password!");
+  }
+}
 
 generateBtn.addEventListener("click", () => {
   const length = +lengthEl.value;
