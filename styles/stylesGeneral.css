@@ -7,6 +7,10 @@
   padding: 0;
 }
 
+/* html {
+  overflow-y: scroll;
+} */
+
 a,
 button {
   cursor: pointer;
@@ -63,6 +67,17 @@ body {
   padding: 4px 8px;
 }
 
+.title-header {
+  color: #3a3a3a;
+  text-transform: uppercase;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
 .btn {
   width: 35px;
   height: 35px;
@@ -70,18 +85,18 @@ body {
   border-radius: 2px;
 }
 
-.pojects .container {
+.projects {
+  margin-top: 84px;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.projects .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 60px;
-}
-
-.pojects .container h1 {
-  color: #fff;
-  text-transform: uppercase;
-  margin: 24px 0;
+  transition: all 0.3s ease-out;
 }
 
 .flex {
@@ -89,6 +104,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* opacity: 1;
+  transition: opacity 0.5s ease; */
 }
 
 .grid {
@@ -96,6 +113,14 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   gap: 10px;
+  /* opacity: 1;
+  transition: opacity 0.5s ease; */
+}
+
+.hidden {
+  /* display: none; */
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .link {
@@ -132,8 +157,64 @@ body {
   align-items: center;
   height: 100%;
 }
+/* HTML: <div class="loader"></div> */
 
-@media (max-width: 800px) {
+.loader-container {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.loader {
+  width: 120px;
+  height: 22px;
+  border-radius: 20px;
+  color: #979797;
+  border: 2px solid;
+  position: relative;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  margin: 2px;
+  inset: 0 100% 0 0;
+  border-radius: inherit;
+  background: currentColor;
+  animation: l6 2s infinite;
+}
+
+@keyframes l6 {
+  100% {
+    inset: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .title-header {
+    font-size: 8px;
+  }
+  .link-home span {
+    display: none;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+  .grid .link {
+    width: 180px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .title-header {
+    font-size: 12px;
+  }
+
   .grid {
     gap: 5px;
   }
@@ -142,12 +223,11 @@ body {
   }
 }
 
-@media (max-width: 576px) {
+@media (min-width: 769px) and (max-width: 992px) {
   .grid {
-    grid-template-columns: 1fr 1fr;
     gap: 5px;
   }
   .grid .link {
-    width: 180px;
+    width: 240px;
   }
 }

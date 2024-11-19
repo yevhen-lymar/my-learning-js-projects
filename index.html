@@ -66,9 +66,11 @@
     <header class="header" id="header">
       <div class="container">
         <a href="https://yevhen-lymar.github.io/" class="link-home"
-          ><i class="fa-solid fa-house"></i> Home</a
+          ><i class="fa-solid fa-house"></i> <span>Home</span></a
         >
-
+        <div class="title-header">
+          <h1>My JavaScripts Projects</h1>
+        </div>
         <div class="toggle-container">
           <button class="btn" id="grid">
             <i class="fa-solid fa-grip"></i>
@@ -80,9 +82,13 @@
       </div>
     </header>
 
-    <section id="projects" class="pojects">
+    <div class="loader-container" id="loader-container">
+      <div id="loader" class="loader" style="display: none"></div>
+    </div>
+
+    <section id="projects" class="projects">
       <div class="container">
-        <h1>My JavaScripts Projects</h1>
+        <!-- <h1>My JavaScripts Projects</h1> -->
         <div class="countProjects">Count of Projects: <span></span></div>
         <div class="flex" id="toggle-g-f">
           <a href="./pages/blurryLoading.html" class="link">Blurry Loading</a>
@@ -159,6 +165,9 @@
           <a href="./pages/imageCarousel.html" class="link">Image Carousel</a>
           <a href="./pages/hoverBoard.html" class="link">Hoverboard</a>
           <a href="./pages/pokedex.html" class="link">Pokedex</a>
+          <a href="./pages/mobileTabNavigation.html" class="link"
+            >Mobile Tab Navigation</a
+          >
         </div>
       </div>
     </section>
