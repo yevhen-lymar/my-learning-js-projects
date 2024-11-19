@@ -6,12 +6,14 @@ const header = document.getElementById("header");
 const loader = document.getElementById("loader");
 const loaderEl = document.getElementById("loader-container");
 const sectionProject = document.getElementById("projects");
+const scrollUpBtn = document.getElementById("up-scroll");
 
 const linkCount = links.length;
 const countProjects = document.querySelector(".countProjects span");
 countProjects.innerText = linkCount;
 
 gridBtn.addEventListener("click", () => {
+  resetViwport();
   if (toggle.className === "grid") {
     return;
   } else {
@@ -34,6 +36,7 @@ gridBtn.addEventListener("click", () => {
 });
 
 flexBtn.addEventListener("click", () => {
+  resetViwport();
   if (toggle.className === "flex") {
     return;
   } else {
@@ -56,3 +59,26 @@ flexBtn.addEventListener("click", () => {
     }, 600);
   }
 });
+
+function resetViwport() {
+  window.scrollTo({
+    top: 0,
+  });
+}
+
+function scrollToUp() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    scrollUpBtn.style.display = "block";
+  } else {
+    scrollUpBtn.style.display = "none";
+  }
+});
+
+scrollUpBtn.addEventListener("click", scrollToUp);

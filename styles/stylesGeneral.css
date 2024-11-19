@@ -193,10 +193,23 @@ body {
   }
 }
 
+/* Scroll-Up button */
+.scroll-top {
+  display: none;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+}
+
 @media (max-width: 576px) {
+  .header .container {
+    padding: 18px 10px;
+  }
+
   .title-header {
     font-size: 8px;
   }
+
   .link-home span {
     display: none;
   }
@@ -205,8 +218,13 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 5px;
   }
+
   .grid .link {
     width: 180px;
+  }
+
+  .scroll-top {
+    right: 15px;
   }
 }
 
